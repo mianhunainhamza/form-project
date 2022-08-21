@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 100px;
+    background-color: #222;
+    flex-direction: column;
+}
+footer
+{
+    color: #fff;
+}
+footer a{
+    color: antiquewhite;
+    margin-left: 1rem;
+}
+h1{
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, .5);
+    margin-left: -1px;
+    margin-bottom:1rem;
+}
+.container
+{
+    border: #fff;
+    border-radius: 10px;
+    border-style: groove;
+    min-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 100px;
+}
+
+.inputbox {
+    position: relative;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.inputbox input 
+{
+    width: 100%;
+    background:transparent;
+    color: #fff;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    padding: 10px 0 5px;
+}
+.inputbox span
+{
+    position: absolute;
+    left: 0;
+    padding:10px 0 5px;
+    color: rgba(255, 255, 255, .5);
+    text-transform: uppercase;
+    pointer-events: none;
+    letter-spacing: .1em;
+    transition: 0.5s;
+}
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span
+{
+    color: #2196f3;
+    transform: translateY(-16px);
+    font-size: .65em;
+}
+.inputbox i
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    left: 0;
+    overflow: hidden;
+}
+.inputbox i::before
+{
+    content: '';
+    left: -100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(90deg,#ff1b69,#ff0,#2196f3,#9c27b0,#ff1b69);
+    animation: animate 2s linear infinite;
+    transition: .5s;
+}
+
+.inputbox input:valid ~i::before,
+.inputbox input:focus ~i::before
+{
+    left: 0;
+}
+
+@keyframes animate 
+{
+    0%{
+        background-position-x: 0;
+    }    
+    100%{
+        background-position-x: 250px;
+    }    
+}
